@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdpmebl0brvkk"]
+
+[ext_resource type="Script" uid="uid://cp3l70j5qlsym" path="res://Scenes/objeto_lanzable.gd" id="1_5p85m"]
+[ext_resource type="Texture2D" uid="uid://dyf6hg3ebkjqq" path="res://Assets/Tiles/brick_brown_diagonal.png" id="1_awxk8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
+radius = 35.0
+height = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5p85m"]
+radius = 125.4472
+
+[node name="Brick" type="RigidBody2D" unique_id=733256840]
+script = ExtResource("1_5p85m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085564470]
+shape = SubResource("CapsuleShape2D_xrivr")
+
+[node name="BrickBrownDiagonal" type="Sprite2D" parent="." unique_id=1814796124]
+texture = ExtResource("1_awxk8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1460530361]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1291687911]
+shape = SubResource("CircleShape2D_5p85m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

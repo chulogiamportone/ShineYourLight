@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d0j2uwuuhhi1u"]
+
+[ext_resource type="Script" uid="uid://b10t8th5ab0dx" path="res://Scenes/camara_manager.gd" id="1_jws0c"]
+
+[node name="CamaraManager" type="Node2D" unique_id=92045503]
+script = ExtResource("1_jws0c")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=306068486]
+position = Vector2(577, 323)
+
+[node name="SplitScreen" type="CanvasLayer" parent="." unique_id=86424303]
+layer = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SplitScreen" unique_id=9553929]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SplitScreen/HBoxContainer" unique_id=677604972]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreen/HBoxContainer/SubViewportContainer" unique_id=1027538041]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SplitScreen/HBoxContainer/SubViewportContainer/SubViewport" unique_id=291991341]
+position = Vector2(62, 0)
+
+[node name="ColorRect" type="ColorRect" parent="SplitScreen/HBoxContainer" unique_id=390796622]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="SplitScreen/HBoxContainer" unique_id=1098880582]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewport" type="SubViewport" parent="SplitScreen/HBoxContainer/SubViewportContainer2" unique_id=1568861567]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SplitScreen/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=1332618875]
+position = Vector2(578, 0)

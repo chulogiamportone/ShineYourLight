@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bduob5s1m4r4i"]
+
+[ext_resource type="Script" uid="uid://plqej7c7uvqt" path="res://hud.gd" id="1_bjfho"]
+[ext_resource type="Texture2D" uid="uid://b3dsnoxvhcoae" path="res://Assets/Tiles/hud_player_beige.png" id="2_6fbih"]
+[ext_resource type="Texture2D" uid="uid://lakigg8ueqry" path="res://Assets/Tiles/hud_player_green.png" id="3_t1xeu"]
+
+[node name="HUD" type="CanvasLayer" unique_id=562003099]
+layer = 2
+script = ExtResource("1_bjfho")
+
+[node name="Control" type="Control" parent="." unique_id=1216455683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HudPlayerBeige" type="Sprite2D" parent="Control" unique_id=1102064045]
+position = Vector2(1087, 61)
+texture = ExtResource("2_6fbih")
+
+[node name="Label" type="Label" parent="Control" unique_id=1271617910]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HudPlayerGreen" type="Sprite2D" parent="Control" unique_id=575520836]
+position = Vector2(66, 63)
+texture = ExtResource("3_t1xeu")
+
+[node name="Label2" type="Label" parent="Control" unique_id=1406264688]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_top = 30.0
+offset_right = -152.0
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1

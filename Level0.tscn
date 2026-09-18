@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://clw30lr2lf2mn"]
+
+[ext_resource type="Texture2D" uid="uid://ct6d3s67lwifu" path="res://Assets/fondo.jpg" id="1_e6li3"]
+[ext_resource type="Script" uid="uid://chqlp2ls5sb8p" path="res://Scenes/Player/player.gd" id="2_8r63q"]
+[ext_resource type="Texture2D" uid="uid://b75dju0j4gbjx" path="res://Assets/Characters/character_beige_idle.png" id="3_qmbyq"]
+[ext_resource type="Texture2D" uid="uid://j1en3fpgy85" path="res://Assets/Characters/character_beige_walk_a.png" id="4_jooga"]
+[ext_resource type="Texture2D" uid="uid://dx32ss0d5vq0n" path="res://Assets/Characters/character_beige_walk_b.png" id="5_b5pna"]
+[ext_resource type="Script" uid="uid://b4rarvnk5l6fs" path="res://respawn.gd" id="6_e6c3w"]
+[ext_resource type="TileSet" uid="uid://bf1ckotc6q1o5" path="res://Scenes/tile_set.tres" id="7_nwh7g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jooga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b5pna")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
+radius = 72.0
+height = 208.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(1365.5, 187.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(8162, 284)
+
+[node name="Level0" type="Control" unique_id=517428423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1712032953]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3989.0
+offset_top = -760.0
+offset_right = 2960.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e6li3")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2007181117]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("2_8r63q")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=37638285]
+visible = false
+texture = ExtResource("3_qmbyq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1791030812]
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"walk"
+autoplay = "walk"
+frame = 1
+frame_progress = 0.8607653
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1239434505]
+position = Vector2(-1, 35)
+shape = SubResource("CapsuleShape2D_xrivr")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1780952144]
+zoom = Vector2(0.5, 0.5)
+limit_bottom = 1100
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1671010656]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=864709171]
+position = Vector2(498.25, 680.25)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1535685542]
+position = Vector2(-1695, 684)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=296238373]
+script = ExtResource("6_e6c3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=202608680]
+position = Vector2(84, 1131)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1859443019]
+tile_map_data = PackedByteArray(0, 0, 252, 255, 3, 0, 1, 0, 3, 0, 10, 0, 0, 0, 253, 255, 3, 0, 1, 0, 4, 0, 10, 0, 0, 0, 249, 255, 2, 0, 1, 0, 3, 0, 10, 0, 0, 0, 250, 255, 2, 0, 1, 0, 4, 0, 10, 0, 0, 0)
+tile_set = ExtResource("7_nwh7g")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

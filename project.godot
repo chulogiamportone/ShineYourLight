@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Plataforma2d-Taller Godot"
-run/main_scene="uid://b8g7ufd575m6f"
+run/main_scene="uid://clw30lr2lf2mn"
 config/features=PackedStringArray("4.7", "Mobile")
 
 [input]

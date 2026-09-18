@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ou8dy6yhgtkm"]
 
-[ext_resource type="Script" uid="uid://drpaegklvfnkj" path="res://Scenes/objeto_explosivo.gd" id="1_4fn8o"]
+[ext_resource type="Script" uid="uid://drpaegklvfnkj" path="res://Scenes/objets/objeto_explosivo.gd" id="1_4fn8o"]
 [ext_resource type="Texture2D" uid="uid://diigmkufqtgx5" path="res://Assets/Tiles/bomb.png" id="1_573fp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]

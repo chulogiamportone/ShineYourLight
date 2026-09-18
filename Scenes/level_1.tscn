@@ -1,19 +1,18 @@
 [gd_scene format=4 uid="uid://b8g7ufd575m6f"]
 
-[ext_resource type="Shader" uid="uid://c2bj5ocusbtbf" path="res://viento.gdshader" id="1_8ffim"]
+[ext_resource type="Shader" uid="uid://c2bj5ocusbtbf" path="res://Scenes/shaders/viento.gdshader" id="1_8ffim"]
 [ext_resource type="Texture2D" uid="uid://cqscner4f6xc8" path="res://Assets/Backgrounds/background_clouds.png" id="2_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://i6lpb3j4vboq" path="res://Assets/Backgrounds/background_fade_desert.png" id="3_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://d3h137a4cen43" path="res://Assets/Backgrounds/background_color_trees.png" id="4_xrdnt"]
 [ext_resource type="TileSet" uid="uid://bf1ckotc6q1o5" path="res://Scenes/tile_set.tres" id="5_wrinw"]
-[ext_resource type="Shader" uid="uid://sgpyxnkow51l" path="res://Scenes/agua.gdshader" id="5_xrdnt"]
+[ext_resource type="Shader" uid="uid://sgpyxnkow51l" path="res://Scenes/shaders/agua.gdshader" id="5_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://b1of3adof37pv" path="res://Assets/Characters/character_green_climb_a.png" id="7_af3po"]
 [ext_resource type="Script" uid="uid://4k6t0h05gug" path="res://Scenes/Player/player2p.gd" id="7_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://b75dju0j4gbjx" path="res://Assets/Characters/character_beige_idle.png" id="9_chwpn"]
-[ext_resource type="PackedScene" uid="uid://bduob5s1m4r4i" path="res://Scenes/hud.tscn" id="12_6ioyp"]
-[ext_resource type="PackedScene" uid="uid://bf3j18g0x6asw" path="res://Scenes/torch.tscn" id="12_6r07y"]
-[ext_resource type="PackedScene" uid="uid://d0j2uwuuhhi1u" path="res://Scenes/camara_manager.tscn" id="12_uy8f0"]
-[ext_resource type="PackedScene" uid="uid://ou8dy6yhgtkm" path="res://bomb.tscn" id="13_6r07y"]
-[ext_resource type="PackedScene" uid="uid://bdpmebl0brvkk" path="res://brick.tscn" id="14_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://bduob5s1m4r4i" path="res://Scenes/camera/hud.tscn" id="12_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://bf3j18g0x6asw" path="res://Scenes/objets/torch.tscn" id="12_6r07y"]
+[ext_resource type="PackedScene" uid="uid://d0j2uwuuhhi1u" path="res://Scenes/camera/camara_manager.tscn" id="12_uy8f0"]
+[ext_resource type="PackedScene" uid="uid://ou8dy6yhgtkm" path="res://Scenes/objets/bomb.tscn" id="13_6r07y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1lj4"]
 shader = ExtResource("1_8ffim")
@@ -211,5 +210,8 @@ player2 = NodePath("../CharacterBody2D2")
 [node name="Bomb" parent="." unique_id=1510162191 instance=ExtResource("13_6r07y")]
 position = Vector2(902, 814)
 
-[node name="Brick" parent="." unique_id=825290539 instance=ExtResource("14_6ioyp")]
-position = Vector2(231, 447)
+[node name="Bomb2" parent="." unique_id=1416421278 instance=ExtResource("13_6r07y")]
+position = Vector2(1287, 50)
+
+[node name="Bomb3" parent="." unique_id=1332317575 instance=ExtResource("13_6r07y")]
+position = Vector2(-297, 50)

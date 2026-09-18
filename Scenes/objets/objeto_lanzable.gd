@@ -10,12 +10,12 @@ func _process(_delta):
 
 func ser_agarrado(nuevo_portador):
 	portador = nuevo_portador
-	#freeze = true # Desactiva las físicas mientras se sostiene
+	freeze = true # Desactiva las físicas mientras se sostiene
 
 func ser_lanzado(direccion_x, fuerza):
 	portador = null
 	fue_lanzado=true
-	#freeze = false # Reactiva las físicas
+	freeze = false # Reactiva las físicas
 	# Aplica un impulso: fuerza horizontal y un poco de fuerza vertical para la parábola
 	apply_central_impulse(Vector2(direccion_x * fuerza, -fuerza * 0.5))
 

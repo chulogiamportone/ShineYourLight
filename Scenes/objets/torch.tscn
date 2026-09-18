@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf3j18g0x6asw"]
 
 [ext_resource type="Texture2D" uid="uid://bbo6jddakds7h" path="res://Assets/Tiles/torch_off.png" id="1_kg6dd"]
-[ext_resource type="Script" uid="uid://cib8ceda5t7iv" path="res://Scenes/torch.gd" id="2_05x6m"]
+[ext_resource type="Script" uid="uid://cib8ceda5t7iv" path="res://Scenes/objets/torch.gd" id="2_05x6m"]
 [ext_resource type="Texture2D" uid="uid://bd2sfnbjm8ksa" path="res://Assets/Tiles/torch_on_a.png" id="2_7ufd5"]
 [ext_resource type="Texture2D" uid="uid://bjfs75d0uojss" path="res://Assets/Tiles/torch_on_b.png" id="3_05x6m"]
 [ext_resource type="Texture2D" uid="uid://x28jtykod88a" path="res://Assets/Tiles/vtorch_on_a.png" id="4_d43v6"]
